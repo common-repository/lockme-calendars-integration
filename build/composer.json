@@ -1,0 +1,38 @@
+{
+    "name": "lustmored\/lockme-wordpress",
+    "description": "LockMe wordpress integration plugin",
+    "type": "wordpress-plugin",
+    "config": {
+        "platform": {
+            "php": "8.1.29"
+        },
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "lustmored\/lockme-sdk": "^2.3.1",
+        "paragonie\/random_compat": "<9.99"
+    },
+    "require-dev": {
+        "roave\/security-advisories": "dev-latest"
+    },
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Jakub Caban",
+            "email": "kuba@whyblack.pl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "LockmeDep\\LockmeIntegration\\": "src\/"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": ".\/scoper.sh",
+        "post-install-cmd": ".\/scoper.sh"
+    }
+}
